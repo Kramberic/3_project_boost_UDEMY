@@ -17,19 +17,41 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem successParticles;
 
     AudioSource aS;
+    CapsuleCollider rocketColliders;
 
     bool isTransitioning = false;
+    bool collisionsEngaged = false;
 
     void Start()
     {
         aS = GetComponent<AudioSource>();
+        rocketColliders = GetComponent<CapsuleCollider>();
         isTransitioning = true;
+    }
+
+    void Update()
+    {
+        DebugOptions();
+    }
+
+    // DBG options method (udemy sollution) ----------------------------------------------------------------------
+    void DebugOptions()
+    {
+        if (Input.GetKeyDown(KeyCode.Q)) // toggle to next level (Q)
+        {
+            NextLevel();
+        }
+        else if(Input.GetKeyDown(KeyCode.W)) // toggle if collisions are working (W)
+        {
+            collisionsEngaged = !collisionsEngaged;
+            Debug.Log("Collisions = " + collisionsEngaged);
+        }   
     }
 
     // int currentSceneIndex = 0;
     void OnCollisionEnter(Collision other)
     {
-        if (isTransitioning == true)
+        if (isTransitioning)
         {
             switch (other.gameObject.tag)
             {
@@ -47,6 +69,28 @@ public class CollisionHandler : MonoBehaviour
             }
         }
     }
+    /*
+    void OnCollisionEnter(Collision other)
+    {
+        if (isTransitioning || collisionsEngaged) { return; }
+
+        switch (other.gameObject.tag)
+        {
+            case "Friendly": // when you land on the takeoff pad
+                Debug.Log("Rocket landed on the takeoff pad.");
+                break;
+            case "Finish": // when you finish the level
+                startNextLevelsequence();
+                isTransitioning = false;
+                break;
+            default:
+                StartCrashSequence(); // when you crash the rocket
+                isTransitioning = false;
+                break;
+        }
+    }
+    */
+
 
     void startNextLevelsequence()
     {

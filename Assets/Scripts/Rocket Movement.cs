@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class RocketMovement : MonoBehaviour
@@ -15,12 +16,14 @@ public class RocketMovement : MonoBehaviour
 
     Rigidbody rocketPhysics;
     AudioSource engineSound;
+    // CapsuleCollider rocketColliders;    --------------------------------------------> DBG my sollution
 
     // Start is called before the first frame update --------------------------------------------------------------
     void Start()
     {
         rocketPhysics = GetComponent<Rigidbody>();
         engineSound = GetComponent<AudioSource>();
+        // rocketColliders = GetComponent<CapsuleCollider>();    -----------------------> DBG my sollution
     }
 
     // Update is called once per frame --------------------------------------------------------------
@@ -28,6 +31,8 @@ public class RocketMovement : MonoBehaviour
     {
         ProcessThrust();
         ProcessRotation();
+        // DebugNextLevel(); ----------------------------------------------------------> DBG my sollution
+        // DebugDisableColliders(); ---------------------------------------------------> DBG my sollution
     }
 
     // methods for movement --------------------------------------------------------------
@@ -42,7 +47,7 @@ public class RocketMovement : MonoBehaviour
             StopThrusting();
         }
     }
-        void ProcessRotation()
+    void ProcessRotation()
     {   
         if (Input.GetKey(KeyCode.LeftArrow))    // issue here is that left is prioritised over right since it has IF and the other has ELSE IF
         {
@@ -57,6 +62,28 @@ public class RocketMovement : MonoBehaviour
             StopRotating();
         }
     }
+
+    /*
+    // DBG methods for skipping level and disabling colliders --------------------------> DBG my sollution
+    void DebugNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+    }
+
+    void DebugDisableColliders()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            rocketColliders.enabled = !rocketColliders.enabled;
+            Debug.Log("Collider.enabled = " + rocketColliders.enabled);
+        }
+    }
+    */
 
     // methods for thrusting --------------------------------------------------------------
     private void StartThrusting()
@@ -83,11 +110,6 @@ public class RocketMovement : MonoBehaviour
     private void RotateLeft()
     {
         ShipRotation(rotationThrust);
-        /*if (!engineSound.isPlaying)
-        {
-            engineSound.clip = sideEngines;
-            engineSound.PlayOneShot(sideEngines);
-        }*/
         if (!sideEngineParticlesRight.isPlaying)
         {
             sideEngineParticlesRight.Play();
@@ -96,11 +118,6 @@ public class RocketMovement : MonoBehaviour
     private void RotateRight()
     {
         ShipRotation(-rotationThrust);
-        /*if (!engineSound.isPlaying)
-        {
-            engineSound.clip = sideEngines;
-            engineSound.PlayOneShot(sideEngines);
-        }*/
         if (!sideEngineParticlesLeft.isPlaying)
         {
             sideEngineParticlesLeft.Play();
