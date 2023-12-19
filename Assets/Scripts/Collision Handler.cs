@@ -3,12 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [Header("Game over timer")]
     [Tooltip("Set the amount of seconds the game will continue after you crash."
-    + "You will not have control of the rocket during this time.")]
+    + " You will not have control of the rocket during this time.")]
     [SerializeField] float timerDelay = 1f;
+    
+    [Header("End Game Audio")]
     [SerializeField] AudioClip crashAudio;
     [SerializeField] AudioClip successAudio;
 
+    [Header("End Game Particles")]
     [SerializeField] ParticleSystem crashParticles;
     [SerializeField] ParticleSystem successParticles;
 
