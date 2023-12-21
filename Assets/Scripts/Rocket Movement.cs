@@ -8,7 +8,6 @@ public class RocketMovement : MonoBehaviour
     [SerializeField] float liftThrust = 1f;
     [SerializeField] float rotationThrust = 1f;
     [SerializeField] AudioClip mainEngine;
-    // [SerializeField] AudioClip sideEngines;
 
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem sideEngineParticlesLeft;
@@ -16,14 +15,14 @@ public class RocketMovement : MonoBehaviour
 
     Rigidbody rocketPhysics;
     AudioSource engineSound;
-    // CapsuleCollider rocketColliders;    --------------------------------------------> DBG my sollution
+    // CapsuleCollider rocketColliders;    --------------------------------------------> DBG my sollution!
 
     // Start is called before the first frame update --------------------------------------------------------------
     void Start()
     {
         rocketPhysics = GetComponent<Rigidbody>();
         engineSound = GetComponent<AudioSource>();
-        // rocketColliders = GetComponent<CapsuleCollider>();    -----------------------> DBG my sollution
+        // rocketColliders = GetComponent<CapsuleCollider>();    ----------------------> DBG my sollution!
     }
 
     // Update is called once per frame --------------------------------------------------------------
@@ -31,8 +30,8 @@ public class RocketMovement : MonoBehaviour
     {
         ProcessThrust();
         ProcessRotation();
-        // DebugNextLevel(); ----------------------------------------------------------> DBG my sollution
-        // DebugDisableColliders(); ---------------------------------------------------> DBG my sollution
+        // DebugNextLevel(); ----------------------------------------------------------> DBG my sollution!
+        // DebugDisableColliders(); ---------------------------------------------------> DBG my sollution!
     }
 
     // methods for movement --------------------------------------------------------------
@@ -64,7 +63,7 @@ public class RocketMovement : MonoBehaviour
     }
 
     /*
-    // DBG methods for skipping level and disabling colliders --------------------------> DBG my sollution
+    // DBG methods for skipping level and disabling colliders --------------------------> DBG my sollution!
     void DebugNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
