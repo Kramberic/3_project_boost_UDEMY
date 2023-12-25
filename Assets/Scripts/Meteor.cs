@@ -7,8 +7,8 @@ public class Meteor : MonoBehaviour
     MeshRenderer meteorAppear;
 
     [Header("Meteor settings")]
-    [SerializeField] float meteorAppearDelay = 3f;
-    [SerializeField] float meteorDisappearDelay = 10f;
+    [SerializeField] float meteorAppearDelay = 5f;
+    [SerializeField] float meteorDisappearDelay = 20f;
     [SerializeField] float meteorSpeedAxisX = -100f;
     [SerializeField] float meteorSpeedAxisY = -10f;
 
@@ -16,30 +16,38 @@ public class Meteor : MonoBehaviour
     [SerializeField] ParticleSystem meteorFlameTwo;
     [SerializeField] ParticleSystem meteorFlameThree;
 
-    // Start is called before the first frame update
+    float timePlaying;
+
     void Start()
     {
         meteorAppear = GetComponent<MeshRenderer>();
         meteorAppear.enabled = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Time.time > meteorAppearDelay && Time.time < meteorDisappearDelay)
+        timePlaying = Time.timeSinceLevelLoad;
+
+        if (timePlaying < meteorAppearDelay)
+        {
+            StopParticlesMeteor();
+        }
+        
+        else if (timePlaying >= meteorAppearDelay && timePlaying < meteorDisappearDelay)
         {
             meteorAppear.enabled = true;
             MoveMeteor();
-            PlayParticlesMeteor();
-            
+            if(!meteorFlameOne.isPlaying && !meteorFlameTwo.isPlaying && !meteorFlameThree.isPlaying)
+            {
+                PlayParticlesMeteor();
+            }
         }
 
-        else   // particli se ne nehajo playat, čeprav kličem metodo da se + če jo kličem jih sploh ni ?????????
+        else
         {
             meteorAppear.enabled = false;
-            // StopParticlesMeteor();
+            StopParticlesMeteor();
         }
-
     }
 
     void MoveMeteor() // method for moving the meteor
@@ -48,7 +56,6 @@ public class Meteor : MonoBehaviour
         float yValue = Time.deltaTime * meteorSpeedAxisY;
         transform.Translate(xValue,yValue,0);
     }
-
 
     void PlayParticlesMeteor() // method for playing meteor particles
     {

@@ -55,7 +55,6 @@ public class CollisionHandler : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Friendly": // when you land on the takeoff pad
-                Debug.Log("Rocket landed on the takeoff pad.");
                 break;
             case "Finish": // when you finish the level
                 startNextLevelsequence();
@@ -74,6 +73,7 @@ public class CollisionHandler : MonoBehaviour
         successParticles.Play(successParticles);
         GetComponent<RocketMovement>().enabled = false;        
         Invoke("NextLevel", timerDelay);
+        Start();
     }
 
     void StartCrashSequence()
@@ -84,6 +84,7 @@ public class CollisionHandler : MonoBehaviour
         crashParticles.Play(crashParticles);
         GetComponent<RocketMovement>().enabled = false;
         Invoke("ReloadLevel", timerDelay);
+        Start();
     }
 
     

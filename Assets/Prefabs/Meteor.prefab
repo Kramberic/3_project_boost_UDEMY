@@ -121,8 +121,8 @@ Transform:
   m_GameObject: {fileID: 552893670118109187}
   serializedVersion: 2
   m_LocalRotation: {x: -0.09750814, y: 0.7003515, z: 0.09750814, w: 0.7003515}
-  m_LocalPosition: {x: 0.08915376, y: 0.07555114, z: 0}
-  m_LocalScale: {x: 7.8324, y: 7.8324, z: 1.1360189}
+  m_LocalPosition: {x: 0.161, y: 0.096, z: 0}
+  m_LocalScale: {x: 7.8324, y: 5.2799697, z: 3.2977645}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3047493436491467171}
@@ -9766,6 +9766,7 @@ GameObject:
   - component: {fileID: 6783300246439744901}
   - component: {fileID: 365678133076792003}
   - component: {fileID: 6787839892854953557}
+  - component: {fileID: 4191296796824548371}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: Untagged
@@ -9863,6 +9864,25 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4191296796824548371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181514726055303658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92abb7b073bab4c94a3aa081c27f900c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meteorAppearDelay: 5
+  meteorDisappearDelay: 20
+  meteorSpeedAxisX: -30
+  meteorSpeedAxisY: -3
+  meteorFlameOne: {fileID: 4812408614716366801}
+  meteorFlameTwo: {fileID: 5354131352088291724}
+  meteorFlameThree: {fileID: 4855055307431687083}
 --- !u!1 &4926070952223136823
 GameObject:
   m_ObjectHideFlags: 0
@@ -10528,7 +10548,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 38.17
+    angle: 15.19
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
