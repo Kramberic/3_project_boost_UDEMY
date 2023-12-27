@@ -106,7 +106,7 @@ public class CollisionHandler : MonoBehaviour
     
     void ReloadLevel() // method for reloading same level if rocket crashes
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex; 
-        SceneManager.LoadScene(currentSceneIndex);
+        // int currentSceneIndex = SceneManager.GetActiveScene().buildIndex; 
+        SceneManager.LoadScene(0);
     }
 }

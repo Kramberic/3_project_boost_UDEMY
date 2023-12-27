@@ -15,26 +15,20 @@ public class RocketMovement : MonoBehaviour
 
     Rigidbody rocketPhysics;
     AudioSource engineSound;
-    // CapsuleCollider rocketColliders;    --------------------------------------------> DBG my sollution!
 
-    // Start is called before the first frame update --------------------------------------------------------------
     void Start()
     {
         rocketPhysics = GetComponent<Rigidbody>();
         engineSound = GetComponent<AudioSource>();
-        // rocketColliders = GetComponent<CapsuleCollider>();    ----------------------> DBG my sollution!
     }
 
-    // Update is called once per frame --------------------------------------------------------------
     void Update()
     {
         ProcessThrust();
         ProcessRotation();
-        // DebugNextLevel(); ----------------------------------------------------------> DBG my sollution!
-        // DebugDisableColliders(); ---------------------------------------------------> DBG my sollution!
     }
 
-    // methods for movement --------------------------------------------------------------
+    // methods for movement
     void ProcessThrust()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -48,7 +42,7 @@ public class RocketMovement : MonoBehaviour
     }
     void ProcessRotation()
     {   
-        if (Input.GetKey(KeyCode.LeftArrow))    // issue here is that left is prioritised over right since it has IF and the other has ELSE IF
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             RotateLeft();
         }
@@ -62,29 +56,7 @@ public class RocketMovement : MonoBehaviour
         }
     }
 
-    /*
-    // DBG methods for skipping level and disabling colliders --------------------------> DBG my sollution!
-    void DebugNextLevel()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-    }
-
-    void DebugDisableColliders()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            rocketColliders.enabled = !rocketColliders.enabled;
-            Debug.Log("Collider.enabled = " + rocketColliders.enabled);
-        }
-    }
-    */
-
-    // methods for thrusting --------------------------------------------------------------
+    // methods for thrusting
     private void StartThrusting()
     {
         rocketPhysics.AddRelativeForce(Vector3.up * liftThrust * Time.deltaTime);
@@ -105,7 +77,7 @@ public class RocketMovement : MonoBehaviour
         mainEngineParticles.Stop();
     }
 
-    // methods for rotating --------------------------------------------------------------
+    // methods for rotating
     private void RotateLeft()
     {
         ShipRotation(rotationThrust);
