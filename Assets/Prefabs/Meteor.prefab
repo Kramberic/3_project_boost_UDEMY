@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 750313397819427512}
   - component: {fileID: 6282243317486154751}
   m_Layer: 0
-  m_Name: Lighting
+  m_Name: Lighting (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441712868715236477}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.078814365, z: -0, w: 0.99688935}
-  m_LocalPosition: {x: -0.2579999, y: 0, z: -1.439}
+  m_LocalRotation: {x: -0, y: 0.27488208, z: -0, w: 0.96147794}
+  m_LocalPosition: {x: -0.9410299, y: 0.00064525934, z: -1.4315798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3047493436491467171}
-  m_LocalEulerAnglesHint: {x: 0, y: 9.041, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 31.91, z: 0}
 --- !u!108 &6282243317486154751
 Light:
   m_ObjectHideFlags: 0
@@ -120,13 +120,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552893670118109187}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09750814, y: 0.7003515, z: 0.09750814, w: 0.7003515}
-  m_LocalPosition: {x: 0.161, y: 0.096, z: 0}
+  m_LocalRotation: {x: 0.032744516, y: -0.76688284, z: -0.07890144, w: -0.6360764}
+  m_LocalPosition: {x: 0.421, y: 0.076, z: -0.08}
   m_LocalScale: {x: 7.8324, y: 5.2799697, z: 3.2977645}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3047493436491467171}
-  m_LocalEulerAnglesHint: {x: -15.852, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.362, y: -259.585, z: 2.914}
 --- !u!198 &4812408614716366801
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4950,13 +4950,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3318400582055192227}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09750814, y: 0.7003515, z: 0.09750814, w: 0.7003515}
-  m_LocalPosition: {x: -0.1311339, y: 0.012997333, z: 0}
+  m_LocalRotation: {x: 0.032744516, y: -0.76688284, z: -0.07890144, w: -0.6360764}
+  m_LocalPosition: {x: 0.84535426, y: 0.14715585, z: -0.15761839}
   m_LocalScale: {x: 7.8324, y: 7.8324, z: 4.4726157}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3047493436491467171}
-  m_LocalEulerAnglesHint: {x: -15.852, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.362, y: -259.585, z: 2.914}
 --- !u!198 &5354131352088291724
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9910,13 +9910,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4926070952223136823}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09750814, y: 0.7003515, z: 0.09750814, w: 0.7003515}
-  m_LocalPosition: {x: 0.31714058, y: 0.14029059, z: 0}
+  m_LocalRotation: {x: 0.032744516, y: -0.76688284, z: -0.07890144, w: -0.6360764}
+  m_LocalPosition: {x: 0.24942106, y: 0.047504276, z: -0.048325494}
   m_LocalScale: {x: 7.8324, y: 7.8324, z: 5.2581058}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3047493436491467171}
-  m_LocalEulerAnglesHint: {x: -15.852, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.362, y: -259.585, z: 2.914}
 --- !u!198 &4855055307431687083
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -14739,13 +14739,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8037018217645176885}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.02261013, y: 0.9773699, z: -0.14552967, w: -0.15184854}
-  m_LocalPosition: {x: -0.20100017, y: 0, z: -0.48300013}
+  m_LocalRotation: {x: 0.01651332, y: -0.9828389, z: 0.11066746, w: 0.14665498}
+  m_LocalPosition: {x: -0.14799976, y: 0, z: -0.51600003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3047493436491467171}
-  m_LocalEulerAnglesHint: {x: 16.938, y: 197.662, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.849, y: -163.026, z: 0}
 --- !u!108 &1682408182691535706
 Light:
   m_ObjectHideFlags: 0
@@ -14757,8 +14757,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.8452756, b: 0.7528302, a: 1}
-  m_Intensity: 5
+  m_Color: {r: 0.99820113, g: 1, b: 0.72264147, a: 1}
+  m_Intensity: 100
   m_Range: 80
   m_SpotAngle: 90
   m_InnerSpotAngle: 1
