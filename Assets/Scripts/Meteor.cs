@@ -37,15 +37,12 @@ public class Meteor : MonoBehaviour
         {
             meteorAppear.enabled = true;
             MoveMeteor();
-            if(!meteorFlameOne.isPlaying && !meteorFlameTwo.isPlaying && !meteorFlameThree.isPlaying)
-            {
-                PlayParticlesMeteor();
-            }
+            PlayParticlesMeteor();
         }
 
         else
         {
-            meteorAppear.enabled = false;
+            meteorAppear.enabled = false;    // problem je ker dokler nisem na 3s mi ustavlja particle in jih pol nikol ne prže
             StopParticlesMeteor();
         }
     }
@@ -66,8 +63,8 @@ public class Meteor : MonoBehaviour
 
     void StopParticlesMeteor() // method for stopping meteor particles
     {
-        meteorFlameOne.Stop();
-        meteorFlameTwo.Stop();
-        meteorFlameThree.Stop();
+        meteorFlameOne.gameObject.SetActive(false);
+        meteorFlameTwo.gameObject.SetActive(false);
+        meteorFlameThree.gameObject.SetActive(false);
     }
 }
